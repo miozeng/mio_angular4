@@ -1,0 +1,31 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'Tables'" [icon]="'fa-table'"></app-page-header>
+    <div class="row">
+        <div class="col col-xl-6 col-lg-12">
+            <div class="card mb-3">
+                <div class="card-header">Striped Rows</div>
+                <div class="card-block table-responsive">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>id</th>
+                            <th>city name</th>
+                            <th>status</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let city of cities;">
+                            <td><a [routerLink]="['/cityedit']" [routerLinkActive]="['router-link-active']" >/index.html</a></td>
+                            <td>{{city.cityId}}</td>
+                            <td>{{city.cityName}}</td>
+                            <td>{{city.status}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+</div>

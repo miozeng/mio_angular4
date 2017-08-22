@@ -1,0 +1,9 @@
+[{
+        cityId: 1,
+	    cityName: 'zh',
+	    status: '1	
+},{
+	    cityId: 2,
+	    cityName: 'sz',
+	    status: '1'
+}]
