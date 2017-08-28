@@ -1,25 +1,29 @@
 <div [@routerTransition]>
-    <app-page-header [heading]="'Tables'" [icon]="'fa-table'"></app-page-header>
+    <app-page-header [heading]="'City List'" [icon]="'fa-table'"></app-page-header>
     <div class="row">
         <div class="col col-xl-6 col-lg-12">
             <div class="card mb-3">
-                <div class="card-header">Striped Rows</div>
+                <div class="card-header">City Rows
+                 <a [routerLink]="['/cityedit/0']" [routerLinkActive]="['router-link-active']"  style="float: right;">add</a>
+                </div>
                 <div class="card-block table-responsive">
                     <table class="table table-hover table-striped">
                         <thead>
                         <tr>
                             <th>id</th>
-                            <th>id</th>
                             <th>city name</th>
-                            <th>status</th>
+                            <th>city status</th>
+                            <th></th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr *ngFor="let city of cities;">
-                            <td><a [routerLink]="['/cityedit']" [routerLinkActive]="['router-link-active']" >/index.html</a></td>
-                            <td>{{city.cityId}}</td>
-                            <td>{{city.cityName}}</td>
-                            <td>{{city.status}}</td>
+                        <tr *ngFor="let city of cities; let i = index">
+                            <td>i</td>
+                            <td *ngIf="browserLang == 'en'"> {{city.cityNameEn}}</td>
+                            <td *ngIf="browserLang != 'en'"> {{city.cityName}}</td>
+                            <td *ngIf="city.status!= null">{{city.status.statusName}}</td>
+                            <td *ngIf="city.status== null"></td>
+                             <td><a [routerLink]="['/cityedit/'+city.cityId]" [routerLinkActive]="['router-link-active']" >edit</a></td>
                         </tr>
                         </tbody>
                     </table>

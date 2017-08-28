@@ -1,7 +1,14 @@
 export class City {
    cityId: number;
    cityName: string;
-   status: number;
+   cityNameEn:  string;
+   status: {
+  		 statusId: number;
+  		 statusName: string;
+    };
+    province: {
+  		 provinceId: number;
+    };
    constructor() { 
    }
 } 

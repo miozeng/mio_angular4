@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../router.animations';
 import { Observable } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
 
-import { CityService } from './city.service';
+
+import { LayoutService } from '../layout.service';
 import { City } from './city';
 
 @Component({
@@ -12,29 +14,20 @@ import { City } from './city';
     animations: [routerTransition()]
 })
 export class CityComponent implements OnInit {
-     cities = [{
-	    cityId: '1',
-	    cityName: 'zh',
-	    status: '1'
-	  },{
-	    cityId: '2',
-	    cityName: 'sz',
-	    status: '1'
-	  }];
     
-
-
+     private cities : City[] = [];
      private productsObservable : Observable<City[]> ; 
-    
-    constructor(private cityService: CityService) {
-          this.productsObservable =  this.cityService.get_cities();
-          console.log("bb"+this.productsObservable);
-          this.cityService.get_cities().subscribe((res : City[])=>{
-          alert(res);
-		     console.log( "aa"+res);
-		  });
+     private browserLang = 'en';
+    constructor(private layoutService: LayoutService, private translate: TranslateService) {
+        
     }
 
     ngOnInit() {
+     this.browserLang = this.translate.getBrowserLang();
+      this.layoutService.get_cities().subscribe((res : City[])=>{
+             this.cities = res;
+		     console.log( "cities"+res);
+		  });
+    
     }
 }

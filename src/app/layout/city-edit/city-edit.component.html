@@ -1,26 +1,34 @@
 <div [@routerTransition]>
-    <app-page-header [heading]="'Forms'" [icon]="'fa-edit'"></app-page-header>
+	<app-page-header [heading]="'Forms'" [icon]="'fa-edit'"></app-page-header>
 
-    <div class="row">
-        <div class="col-lg-12">
+	<div class="row">
+		<div class="col-lg-12">
 
-            <form role="form">
-                <fieldset class="form-group">
-                    <label>English Name</label>
-                    <input class="form-control">
-                </fieldset>
+			<form role="form" novalidate (ngSubmit)="onSubmit()" #f="ngForm">
+				<fieldset class="form-group">
+					<label>Vietnam Name</label>
+					 <input class="form-control" [(ngModel)]="city.cityName" name="cityName" #cityName="ngModel" required minlength="4">
+					<div *ngIf="cityName.invalid && (cityName.dirty || cityName.touched)" class="alert alert-danger">
+						<div *ngIf="cityName.errors.required">Name is required.</div>
+						<div *ngIf="cityName.errors.minlength">Name must be at least 4 characters long.</div>
+					</div>
+				</fieldset>
+				<fieldset class="form-group">
+					<label>English Name</label> 
+					<input class="form-control" [(ngModel)]="city.cityNameEn" name="cityNameEn" #cityNameEn="ngModel" required minlength="4">
+					<div *ngIf="cityNameEn.invalid && (cityNameEn.dirty || cityNameEn.touched)" class="alert alert-danger">
+						<div *ngIf="cityNameEn.errors.required">Name is required.</div>
+						<div *ngIf="cityNameEn.errors.minlength">Name must be at least 4 characters long.</div>
+					</div>
+				</fieldset>
+				<button type="submit" [disabled]="!f.form.valid"
+					class="btn btn-secondary">Submit</button>
+				<button type="reset" class="btn btn-secondary">Reset Button</button>
 
-                <fieldset class="form-group">
-                    <label>Other Name</label>
-                    <input class="form-control" placeholder="Enter text">
-                </fieldset>
-                <button type="button" class="btn btn-secondary"  (click)="updateCity()">Submit Button</button>
-                <button type="reset" class="btn btn-secondary">Reset Button</button>
+			</form>
 
-            </form>
+		</div>
 
-        </div>
-        
-    </div>
-    <!-- /.row -->
+	</div>
+	<!-- /.row -->
 </div>

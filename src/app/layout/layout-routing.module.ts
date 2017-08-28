@@ -9,7 +9,7 @@ const routes: Routes = [
             { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
             { path: 'report', loadChildren: './report/report.module#ReportModule' },
             { path: 'city', loadChildren: './city/city.module#CityModule' },
-            { path: 'cityedit', loadChildren: './city-edit/city-edit.module#CityEditModule' },
+            { path: 'cityedit/:cityid', loadChildren: './city-edit/city-edit.module#CityEditModule' },
             { path: 'agent', loadChildren: './agent/agent.module#AgentModule' },
             { path: 'agentedit', loadChildren: './agent-edit/agent-edit.module#AgentEditModule' }
         ]
