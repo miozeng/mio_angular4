@@ -1,14 +1,21 @@
-1.ÏÂÔØÒÀÀµ°ü         
+Angular å¼€å‘ç¯å¢ƒé…ç½®æ–¹å¼                
+åŸºäº Angular Quickstart             
+https://github.com/angular/qu...              
+åŸºäº Angular CLI                          
+npm install -g @angular/cli                    
+
+
+1.ä¸‹è½½ä¾èµ–åŒ…         
 $ npm install      
 
-2.Æô¶¯·şÎñ¡£Ä¬ÈÏ¶Ë¿Ú4200          
+2.å¯åŠ¨æœåŠ¡ã€‚é»˜è®¤ç«¯å£4200          
 $ npm start      
 
-3.±àÒëÉú³ÉdistÎÄ¼ş¼Ğ    
+3.ç¼–è¯‘ç”Ÿæˆdistæ–‡ä»¶å¤¹    
 $ ng build         
 
-4.ÓëjavaÏîÄ¿½áºÏ          
-¿½±´distÎÄ¼ş¼Ğµ½eclipseÏîÄ¿ÎÄ¼şÀï               
-ĞŞ¸Ädist/index.htmlµÄ<base href="">   
-¸ÄÎªÏîÄ¿Ãû+ÎÄ¼şÃû/dmio/dist/         
+4.ä¸javaé¡¹ç›®ç»“åˆ          
+æ‹·è´distæ–‡ä»¶å¤¹åˆ°eclipseé¡¹ç›®æ–‡ä»¶é‡Œ               
+ä¿®æ”¹dist/index.htmlçš„<base href="">   
+æ”¹ä¸ºé¡¹ç›®å+æ–‡ä»¶å/dmio/dist/         
 <base href="/mio/dist/">    
