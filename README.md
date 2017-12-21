@@ -16,6 +16,11 @@ $ ng build
 
 4.与java项目结合          
 拷贝dist文件夹到eclipse项目文件里               
-修改dist/index.html的<base href="">   
-改为项目名+文件名/dmio/dist/         
+修改dist/index.html的
+```html
+<base href="">   
+```
+改为项目名+文件 名 eg:/dmio/dist/
+```sql
 <base href="/mio/dist/">    
+```
